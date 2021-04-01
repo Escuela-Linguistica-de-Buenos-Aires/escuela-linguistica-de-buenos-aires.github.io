@@ -1,0 +1,81 @@
+<!--Esto es una prueba para poner con javascript un formulario de inscripción. Habría que ver cómo hacer para que esta información se guarde en un archivo de tipo csv, que para mí sería lo ideal, o ver cómo se puede hacer para que la información quede registrada en algún lado-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			ELBA post-covid-19 pandemic registration
+		</title>
+	</head>
+	<body style="text-align: center;">
+		<h1 style="color: green;">
+			ELBA post-covid pandemic
+		</h1>
+		<p>
+		Click on the button to create
+		a form dynamically
+		</p>
+		<button onClick="GFG_Fun()">
+			click here
+		</button>
+		<p id="GFG_DOWN"></p>
+<script>
+	var down = document.getElementById("GFG_DOWN");
+			
+	// Create a break line element
+	var br = document.createElement("br");
+	function GFG_Fun() {
+				
+	// Create a form synamically
+	var form = document.createElement("form");
+	form.setAttribute("method", "post");
+	form.setAttribute("action", "submit.php");
+
+	// Create an input element for Full Name
+	var FN = document.createElement("input");
+	FN.setAttribute("type", "text");
+	FN.setAttribute("name", "FullName");
+	FN.setAttribute("placeholder", "Full Name");
+
+	// Create an input element for date of academic affiliation
+	var AAF = document.createElement("input");
+	AAF.setAttribute("type", "text");
+	AAF.setAttribute("name", "aaf");
+	AAF.setAttribute("placeholder", "Academic affiliation");
+
+	// Create an input element for emailID
+	var EID = document.createElement("input");
+	EID.setAttribute("type", "text");
+	EID.setAttribute("name", "emailID");
+	EID.setAttribute("placeholder", "E-Mail ID");
+
+
+				// create a submit button
+				var s = document.createElement("input");
+				s.setAttribute("type", "submit");
+				s.setAttribute("value", "Submit");
+				
+				// Append the full name input to the form
+				form.appendChild(FN);
+				
+				// Inserting a line break
+				form.appendChild(br.cloneNode());
+				
+				// Append the AAF to the form
+				form.appendChild(AAF);
+				form.appendChild(br.cloneNode());
+				
+				// Append the emailID to the form
+				form.appendChild(EID);
+				form.appendChild(br.cloneNode());
+								
+				// Append the submit button to the form
+				form.appendChild(s);
+
+				document.getElementsByTagName("body")[0]
+			.appendChild(form);
+			}
+		</script>
+	</body>
+</html>
+
